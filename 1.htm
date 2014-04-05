@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>You've got invited</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/tab-theme.css" rel="stylesheet">
+	<link href="css/daterangepicker-bs3.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      Hello {{name}}!
+    </script>
+  </head>
+  <body>
+    <div class="container">
+		<div class="row">
+			<h2>Mutually agree on a time</h2>
+			<p class="lead">
+				Enter your name in the input field below and check the box for times that you are available.
+			</p>
+
+			<div class="alert alert-warning">
+				<h4>Summer Holiday 2014</h4>
+				Mario has invited you to participate in the planning of this trip
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<h4 class="page-header">Your mail: yourname@mail.com</h4>
+					<form role="form">
+						<div class="form-group float-label-control label-bottom">
+							<label for="">Your City</label>
+							<input type="city" class="form-control" placeholder="City">
+						</div>
+						<div class="form-group float-label-control label-bottom">
+							<label for="">Gender</label>
+							<select class="form-control" width="20%">
+                                <option value="na" selected="">Choose:</option>
+                                <option value="service">M</option>
+                                <option value="suggestions">F</option>
+                            </select>
+						</div>
+						<div class="form-group float-label-control label-bottom">
+							<label for="reservationtime">Availability dates:</label>
+							<div class="input-group">
+							  <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" name="reservation" id="reservationtime" class="col-xs-8" >
+							</div>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-large btn-primary">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/daterangepicker.js"></script>
+	
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var source   = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var data = {name: "Thierry"};
+
+      $('#hello-entry').html(template(data));
+    })
+    </script>
+	
+	<script type="text/javascript">
+$(document).ready(function() {
+  $('input[name="reservation"]').daterangepicker();
+});
+</script>
+  </body>
+</html>
