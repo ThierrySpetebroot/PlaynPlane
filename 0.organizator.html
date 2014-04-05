@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Template</title>
+    <title>Create a new Holiday trip</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,38 +22,66 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <h2>Step 0 - Invite your holiday mates!</h2>
-        <p class="lead">
-          Invite your trip mates and set a deadline for the first step of your holiday plan.
-        </p>
+		<div class="container col-sm-8">
+		  <div class="row">
+			<h2>Step 0 - Invite your holiday mates!</h2>
+			<p class="lead">
+			  Invite your trip mates and set a deadline for the first step of your holiday plan.
+			</p>
 
-        <div class="col-md-12">
-          <form role="form">
-            <div class="form-group">
-              <label for="select-to">Invites:</label>
-              <div id="select-to" class="form-control"></div>
-            </div>
-            
-            <div class="form-group">
-              <label for="deadline">Deadline:</label>
-              <input type="text" id="deadline" class="form-control"></input>
-            </div>
+			<div class="col-md-12">
+			  <form role="form">
+				<div class="form-group">
+				  <label for="select-to">Invites:</label>
+				  <div id="select-to" class="form-control"></div>
+				</div>
+				
+				<div class="form-group">
+				  <label for="deadline">Deadline:</label>
+				  <input type="text" id="deadline" class="form-control"></input>
+				</div>
 
-            <div class="form-group float-label-control label-bottom">
-              <label for="reservationtime">Availability dates:</label>
-              <div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span><input type="text" name="reservation" id="reservationtime" class="col-xs-8 form-control" >
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-large btn-primary">Save</button>
-            </div>
-          </form>
+				<div class="form-group float-label-control label-bottom">
+				  <label for="reservationtime">Availability dates:</label>
+				  <div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span><input type="text" name="reservation" id="reservationtime" class="col-xs-8 form-control" >
+				  </div>
+				</div>
+				<div class="form-actions">
+				  <button type="submit" class="btn btn-large btn-primary">Save</button>
+				</div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	
+	<div class="col-sm-4 container-fluid well span1">
+		<div class="row">
+		<div class="row-fluid span2">
+		    <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
         </div>
-      </div>
-    </div>
+        
+        <div class="span2">
+            <h3>User Name</h3>
+            <h6>Email: MyEmail@servidor.com</h6>
+            <h6>Ubication: Colombia</h6>
+            <h6>Old: 1 Year</h6>
+        </div>
+        
+        <div class="span1">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                    Action 
+                    <span class="icon-cog icon-white"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
+                    <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
+                </ul>
+            </div>
+        </div>
+		</div>
+	</div>
   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
