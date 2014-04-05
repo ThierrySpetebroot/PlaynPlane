@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/selectize.css" rel="stylesheet">
+    <link href="css/selectize.default.css" rel="stylesheet">
+    <link href="css/selectize.bootstrap3.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h2>Step 0 - Invite your holiday mates!</h2>
+        <p class="lead">
+          Invite your trip mates and set a deadline for the first step of your holiday plan.
+        </p>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="select-to">Invites:</label>
+            <div id="select-to" class="form-control"></div>
+          </div>
+          <div class="form-group">
+            <label for="deadline">Deadline:</label>
+            <input type="text" id="deadline" class="form-control"></input>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-large btn-primary">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/selectize.min.js"></script>
+
+     <script type="text/javascript">
+    $(document).ready(function() {
+      
+      var data = [
+          {email: 'thierry.spetebroot@playnplane.com', name: 'Thierry Spetebroot'},
+          {email: 'colace.alessandro@playnplane.com', name: 'Alessandro Colace'},
+          {email: 'andrea.pavan@playnplane.com', name: 'Andrea Pavan'},
+          {email: 'alberto.dalcorso@playnplane.com', name: 'Alberto Dal Corso'},
+          {email: 'giulia.zanichelli@playnplane.com', name: 'Giulia Zanichelli'},
+          {email: 'mattia.stagnitta@playnplane.com', name: 'Mattia Stagnitta'},
+          {email: 'marianna.niero@playnplane.com', name: 'Marianna Niero'},
+          {email: 'martina.dona@playnplane.com', name: 'Martina Donà'}
+      ];
+
+      $('#select-to').selectize({
+          persist: false,
+          maxItems: null,
+          valueField: 'email',
+          labelField: 'name',
+          searchField: ['name', 'email'],
+          options: data,
+          render: {
+              item: function(item, escape) {
+                  return '<div>' +
+                      (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                      (item.email ? ' <span class="email">' + escape(item.email) + '</span>' : '') +
+                  '</div>';
+              },
+              option: function(item, escape) {
+                  var label = item.name || item.email;
+                  var caption = item.name ? item.email : null;
+                  return '<div>' +
+                      // TODO image
+                      '<span class="label">' + escape(label) + '</span>' +
+                      (caption ? ' <span class="caption">' + escape(caption) + '</span>' : '') +
+                  '</div>';
+              }
+          }
+      });
+    })
+    </script>
+  </body>
+</html>
