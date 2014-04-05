@@ -8,7 +8,6 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/tab-theme.css" rel="stylesheet">
 	<link href="css/daterangepicker-bs3.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -17,15 +16,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script id="entry-template" type="text/x-handlebars-template">
-      Hello {{name}}!
-    </script>
   </head>
   <body>
     <div class="container">
 		<div class="row">
-			<h2>Mutually agree on a time</h2>
+			<h2>Step 0 - Mutually agree on a time</h2>
 			<p class="lead">
 				Enter your name in the input field below and check the box for times that you are available.
 			</p>
@@ -37,7 +32,7 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h4 class="page-header">Your mail: yourname@mail.com</h4>
+					<h4 class="page-header">Your mail: alessandro.colace@playnplane.com</h4>
 					<form role="form">
 						<div class="form-group float-label-control label-bottom">
 							<label for="">Your City</label>
@@ -54,7 +49,7 @@
 						<div class="form-group float-label-control label-bottom">
 							<label for="reservationtime">Availability dates:</label>
 							<div class="input-group">
-							  <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" name="reservation" id="reservationtime" class="col-xs-8" >
+							  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span><input type="text" name="reservation" id="reservationtime" class="col-xs-8 form-control" >
 							</div>
 						</div>
 						<div class="form-actions">
@@ -70,24 +65,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/handlebars.js"></script>
+    
 	<script src="js/moment.js"></script>
 	<script src="js/daterangepicker.js"></script>
 	
-    <script type="text/javascript">
-    $(document).ready(function() {
-      var source   = $("#entry-template").html();
-      var template = Handlebars.compile(source);
-      var data = {name: "Thierry"};
-
-      $('#hello-entry').html(template(data));
-    })
-    </script>
-	
 	<script type="text/javascript">
-$(document).ready(function() {
-  $('input[name="reservation"]').daterangepicker();
-});
-</script>
+	$(document).ready(function() {
+	  $('input[name="reservation"]').daterangepicker();
+	});
+	</script>
   </body>
 </html>
