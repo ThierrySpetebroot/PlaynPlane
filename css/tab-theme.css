@@ -1,0 +1,8 @@
+.tab-container {
+	/* width: 2340px; /* 2 tab (activity) */
+}
+
+.tab {
+	float: left;
+	width: 100%;
+}
